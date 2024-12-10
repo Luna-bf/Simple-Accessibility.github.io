@@ -1,0 +1,213 @@
+/***CSS variables***/
+
+:root {
+    --base-bg-color: #fff;
+    --text-color: #000000;
+    --accessibility-bg-color: #fff;
+    --accessibility-bg-color-hover: #FAFBF5;
+    --accessibility-color-focus: #b22222;
+    --accessibility-border-color: #aaa;
+    --theme-btn-bg-color: #444444;
+    --menu-hover-bg-color: #FAFBF5;
+    --theme-color-focus: #b22222;
+    --theme-icon-color: #fff;
+    --link-color: blue;
+}
+
+.dark-mode {
+    --base-bg-color: #333333;
+    --text-color: #fff;
+    --accessibility-bg-color: #333333;
+    --accessibility-bg-color-hover: #444444;
+    --accessibility-color-focus: #b22222;
+    --theme-btn-bg-color: #fff;
+    --menu-hover-bg-color: #555555;
+    --theme-color-focus: #b22222;
+    --theme-icon-color: #444444;
+    --link-color: powderblue;
+}
+
+/***Reset***/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/***Smooth scroll***/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: var(--base-bg-color);
+    color: var(--text-color);
+    transition: all .3s ease;
+}
+
+nav {
+    padding: 1em;
+    text-align: center;
+    height: 10vh;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#space-between {
+    display: flex;
+    width: 100%;
+}
+
+
+/***Icônes***/
+
+.fa-sun {
+    font-size: 20px;
+    color: var(--theme-icon-color);
+}
+
+.fa-moon {
+    font-size: 20px;
+    color: var(--theme-icon-color);
+}
+
+
+/***Dropdown menu***/
+
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.drop-link {
+    padding: 0 5px;
+    text-decoration: none;
+    color: #000000;
+}
+
+/*Le contenu du dropdown est caché par défaut*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--accessibility-bg-color);
+    border: 1px solid var(--accessibility-border-color);
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    color: var(--text-color);
+    padding: 1em 2em;
+    text-decoration: none;
+    min-width: 15em;
+    transition: none;
+}
+
+.dropdown-content a:hover {
+    border-radius: 5px;
+    background-color: var(--menu-hover-bg-color);
+}
+
+.dropdown-content a:focus {
+    border-radius: 5px;
+    color: var(--accessibility-color-focus);
+}
+
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:first-child::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00e";
+    padding-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.dropdown-content a:nth-child(2)::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f010";
+    padding-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.dropdown-content a:nth-child(3)::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f021";
+    padding-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.dropdown-content a:last-child::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f042";
+    padding-right: 10px;
+    vertical-align: middle;
+    font-weight: 900;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+/*Je veux montrer une seule icône quand le mode lumineux (par défaut) est actif*/
+#change-theme-btn i:last-child {
+    display: none;
+}
+
+/*Je fais donc pareil pour le mode sombre*/
+.dark-mode #change-theme-btn i:first-child {
+    display: none; /*Je rend l'icône lune invisible*/
+}
+
+.dark-mode #change-theme-btn i:last-child {
+    display: block; /*Et j'affiche celle du soleil*/
+}
+
+#themes {
+    margin: auto;
+}
+
+.fa-universal-access {
+    color: firebrick;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+article {
+    width: 80%;
+    margin: auto;
+}
+
+p {
+    margin-bottom: 2em;
+}
+
+p a {
+    color: var(--link-color);
+}
+
+select {
+    padding: 8px;
+    margin: 2em 0 2em 1.5em;
+    font-size: 16px;
+}
+
+@media screen and (max-width : 780px) {
+    body {
+        width: 100%;
+    }
+}
