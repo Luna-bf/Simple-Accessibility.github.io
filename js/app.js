@@ -4,7 +4,7 @@ const elements = {
     changeTheme: document.getElementById("change-theme-btn"),
     increment: document.getElementById("increment"),
     decrement: document.getElementById("decrement"),
-    reset: document.getElementById("reset-all"),
+    resetAll: document.getElementById("resetAll"),
 }
 
 
@@ -38,7 +38,7 @@ elements.decrement.addEventListener("click", () => {
     document.querySelector("body").style.fontSize = "16px";
 });
 
-elements.reset.addEventListener("click", () => {
+elements.resetAll.addEventListener("click", () => {
     document.querySelector("body").style.fontSize = "16px";
     elements.darkMode = disableDarkMode();
 });
@@ -47,6 +47,10 @@ elements.reset.addEventListener("click", () => {
 /*Changement de langue*/
 const translations = {
     fr: {
+        increment: "Augmenter le texte",
+        decrement: "Diminuer le texte",
+        changeTheme: "Changer le thème",
+        resetAll: "Réinitialiser",
         select: "-- Sélectionnez une langue --",
         firstPar : "Undertale est un jeu vidéo de jeu de rôle et indépendant développé par Toby Fox. Le jeu propose de contrôler un enfant tombé dans l’Underground (« souterrain »), une grande région isolée sous la surface de la Terre, séparée de la surface par une barrière magique et peuplée de monstres. Le joueur interagit à plusieurs reprises avec ces monstres dans sa quête pour remonter à la surface, principalement via un système de combat mêlant tour-par-tour et shoot 'em up. Dans celui-ci, le joueur doit éviter des projectiles envoyés par les monstres rencontrés, et a ensuite la possibilité d'attaquer son adversaire pour le tuer, ou de l'épargner. Le choix de tuer ou épargner affecte le jeu, altérant les dialogues, les personnages, et la narration dépendant des choix effectués.",
         secondPar: "Le jeu a été entièrement et indépendamment développé par Toby Fox, un développeur et compositeur de nationalité américaine, que ce soit dans l'écriture du scénario ou la composition des musiques, bien que certains personnages aient été dessinés par d'autres artistes. Parmi les inspirations du jeu, sont notamment cités les jeux de rôle des séries Mother et Mario and Luigi, ainsi que les manic shooters de Touhou Project, et la série comique britannique Mr Bean. Dans la conception initiale d'Undertale, le jeu durait environ deux heures et devait sortir en milieu d'année 2014, le développement dure finalement près de trois ans du fait du rallongement considérable de la durée de la campagne, retardant la sortie.",
@@ -55,6 +59,10 @@ const translations = {
         fifthPar: "Le 16 septembre 2020, à l'occasion du cinquième anniversaire, un concert symphonique3 (filmé en mai 2019 à Tokyo) est diffusé sur la chaine officielle Youtube grâce à la collaboration de Fangamer et 8-4. De nouvelles chansons produites par Toby Fox ont également été ajoutées à la fin de la vidéo pour l'occasion.",
     },
     en: {
+        increment: "Increase text",
+        decrement: "Reduce text",
+        changeTheme: "Change theme",
+        resetAll: "Reset all",
         select: "-- Select a language --",
         firstPar : "Undertale is a role-playing and independent video game developed by Toby Fox. The game allows you to control a child who has fallen into the Underground, a large isolated region under the surface of the Earth, separated from the surface by a magical barrier and populated by monsters. The player interacts several times with these monsters in his quest to return to the surface, mainly via a combat system mixing turn-based and shoot 'em up. In it, the player must avoid projectiles sent by the monsters encountered, and then has the possibility of attacking his opponent to kill him, or to spare him. The choice to kill or spare affects the game, altering the dialogue, characters, and narration depending on the choices made.",
         secondPar: "The game was entirely and independently developed by Toby Fox, an American developer and composer, whether in writing the scenario or composing the music, although some characters were drawn by other artists. Among the game's inspirations, the role-playing games of the Mother and Mario and Luigi series are notably cited, as well as the manic shooters of Touhou Project, and the British comedy series Mr Bean. In Undertale's initial design, the game lasted around two hours and was due to be released in mid-2014; development ultimately lasted almost three years due to the considerable lengthening of the campaign length, delaying the release.",
@@ -65,6 +73,10 @@ const translations = {
 }
 
 const languageSelector = document.querySelector("select");
+let increment = document.getElementById("increment");
+let decrement = document.getElementById("decrement");
+let changeTheme = document.getElementById("change-theme-btn");
+let resetAll = document.getElementById("resetAll");
 let select = document.querySelector("#select-lang")
 let firstPar = document.querySelector("#firstPar");
 let secondPar = document.querySelector("#secondPar");
@@ -79,6 +91,10 @@ languageSelector.addEventListener("change", (event) => {
 const setLanguage = (language) => {
 
     if(language === "fr") {
+        increment.innerText = translations.fr.increment;
+        decrement.innerText = translations.fr.decrement;
+        changeTheme.innerText = translations.fr.changeTheme;
+        resetAll.innerText = translations.fr.resetAll;
         select.innerText = translations.fr.select;
         firstPar.innerText = translations.fr.firstPar;
         secondPar.innerText = translations.fr.secondPar;
@@ -86,6 +102,10 @@ const setLanguage = (language) => {
         fourthPar.innerText = translations.fr.fourthPar;
         fifthPar.innerText = translations.fr.fifthPar;
     } else if(language === "en") {
+        increment.innerText = translations.en.increment;
+        decrement.innerText = translations.en.decrement;
+        changeTheme.innerText = translations.en.changeTheme;
+        resetAll.innerText = translations.en.resetAll;
         select.innerText = translations.en.select;
         firstPar.innerText = translations.en.firstPar;
         secondPar.innerText = translations.en.secondPar;
