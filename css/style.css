@@ -65,19 +65,6 @@ nav {
 }
 
 
-/***Icônes***/
-
-.fa-sun {
-    font-size: 20px;
-    color: var(--theme-icon-color);
-}
-
-.fa-moon {
-    font-size: 20px;
-    color: var(--theme-icon-color);
-}
-
-
 /***Dropdown menu***/
 
 .dropdown-menu {
@@ -145,7 +132,7 @@ nav {
 
 .dropdown-content a:nth-child(3)::before {
     font-family: "Font Awesome 5 Free";
-    content: "\f021";
+    content: "\f042";
     padding-right: 10px;
     vertical-align: middle;
     font-weight: 900;
@@ -155,7 +142,7 @@ nav {
 
 .dropdown-content a:last-child::before {
     font-family: "Font Awesome 5 Free";
-    content: "\f042";
+    content: "\f021";
     padding-right: 10px;
     vertical-align: middle;
     font-weight: 900;
