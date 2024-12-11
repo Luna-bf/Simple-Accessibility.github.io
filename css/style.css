@@ -163,24 +163,6 @@ nav {
     font-size: 18px;
 }
 
-/*Je veux montrer une seule icône quand le mode lumineux (par défaut) est actif*/
-#change-theme-btn i:last-child {
-    display: none;
-}
-
-/*Je fais donc pareil pour le mode sombre*/
-.dark-mode #change-theme-btn i:first-child {
-    display: none; /*Je rend l'icône lune invisible*/
-}
-
-.dark-mode #change-theme-btn i:last-child {
-    display: block; /*Et j'affiche celle du soleil*/
-}
-
-#themes {
-    margin: auto;
-}
-
 .fa-universal-access {
     color: firebrick;
     text-decoration: none;
